@@ -1,0 +1,13 @@
+.healthBar {
+  background: #333;
+  border: 1px solid #666;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill {
+  height: 100%;
+  transition: width 0.2s ease;
+  border-radius: 3px;
+}

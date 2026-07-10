@@ -1,0 +1,81 @@
+/* Tablet & iPad (768px - 1024px) */
+@media (max-width: 1024px) {
+  .stat-block {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: 140px;
+  }
+
+  .gold-display {
+    font-size: 24px;
+    padding: 12px 16px;
+  }
+
+  .unit-button {
+    min-height: 70px;
+    font-size: 11px;
+  }
+}
+
+/* Small tablets & large phones (600px - 768px) */
+@media (max-width: 768px) {
+  .game-shell {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .unit-selector {
+    bottom: 8px;
+    right: 8px;
+    min-width: 240px;
+    padding: 12px;
+  }
+
+  .unit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .pause-button {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+/* Phones (max 600px) */
+@media (max-width: 600px) {
+  .stat-block {
+    font-size: 11px;
+    padding: 6px 10px;
+    min-width: 120px;
+  }
+
+  .gold-display {
+    font-size: 20px;
+  }
+
+  .health-bar {
+    height: 6px;
+  }
+
+  .mana-display {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}
+
+/* Landscape lock for tablets */
+@media (orientation: portrait) and (max-width: 900px) {
+  .portrait-lock {
+    display: flex;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
