@@ -1,0 +1,87 @@
+.gameOverScene {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.victory {
+  font-size: 56px;
+  color: #4CAF50;
+  text-shadow: 0 4px 12px rgba(76, 175, 80, 0.6);
+  margin-bottom: 30px;
+  animation: pulse 1s infinite;
+}
+
+.defeat {
+  font-size: 56px;
+  color: #E74C3C;
+  text-shadow: 0 4px 12px rgba(231, 76, 60, 0.6);
+  margin-bottom: 30px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.scoreCard {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #4A90E2;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.scoreCard h2 {
+  font-size: 24px;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score {
+  font-size: 48px;
+  color: #FFD700;
+  margin: 0;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .victory,
+  .defeat {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .scoreCard {
+    padding: 20px;
+  }
+
+  .scoreCard h2 {
+    font-size: 18px;
+  }
+
+  .score {
+    font-size: 36px;
+  }
+}

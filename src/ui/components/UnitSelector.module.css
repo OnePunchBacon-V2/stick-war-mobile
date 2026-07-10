@@ -1,0 +1,99 @@
+.unitSelector {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #4A90E2;
+  border-radius: 8px;
+  padding: 16px;
+  pointer-events: auto;
+  z-index: 101;
+  min-width: 300px;
+}
+
+.unitSelector h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.unitGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.unitButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #4A90E2;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  min-height: 80px;
+}
+
+.unitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(74, 144, 226, 0.5);
+}
+
+.unitButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.unitButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+.emoji {
+  font-size: 24px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.cost {
+  font-size: 10px;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .unitSelector {
+    bottom: 8px;
+    right: 8px;
+    min-width: 240px;
+    padding: 12px;
+  }
+
+  .unitGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .unitButton {
+    padding: 6px;
+    min-height: 70px;
+    font-size: 11px;
+  }
+
+  .emoji {
+    font-size: 20px;
+  }
+}
