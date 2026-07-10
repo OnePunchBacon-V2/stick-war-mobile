@@ -19,83 +19,20 @@ html, body {
   flex-direction: column;
 }
 
-.game-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  position: relative;
-}
-
-.game-shell {
-  aspect-ratio: 16 / 9;
-  width: min(100vw, 177.78vh);
-  height: min(100vh, 56.25vw);
-  background: #1a1a1a;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-#gameCanvas {
-  display: block;
-  width: 100%;
-  height: 100%;
+body {
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
-.portrait-lock {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  padding: 20px;
-}
-
-.portrait-lock.active {
-  display: flex;
-}
-
-.portrait-lock-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.portrait-lock-icon {
-  font-size: 64px;
-  transform: rotate(90deg);
-}
-
-@media (orientation: portrait) and (max-width: 900px) {
-  .portrait-lock {
-    display: flex;
-  }
-}
-
-/* Button base styles */
 button {
   cursor: pointer;
   border: none;
   outline: none;
   transition: all 0.2s ease;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:active {
@@ -105,4 +42,33 @@ button:active {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A90E2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2196F3;
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
 }
